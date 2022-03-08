@@ -1,49 +1,51 @@
 #CRUD
 
+![alt text](https://github.com/barisdilek/Golang-CRUD-with-mongoDB/blob/main/crud.jpg?raw=true)
+
 1. go package install
 2. Restart IDE
 3. touch main.go
 
-# gin-gonic ve diğer modüllerin yönetimi için
+# for management of gin-gonic and other modules
 
-# mod uzantılı bir dosya oluşacaktır. Burada yüklediğimiz paket bilgilerini görebiliriz.
+# A mod file will be created. Here we can see the package information we have installed.
 
 4. go mod init <folderName>
 
-# gin-gonic için gerekli go paketlerinin yüklenmesi
+# Installing the required go packages for gin-gonic
 
 5. go get -u github.com/gin-gonic/gin
 
-# mongodb için gerekli go paketlerinin yüklenmesi
+# Installing required go packages for mongodb
 
 6. go get -u go.mongodb.org/mongo-driver
 
-# MongoDB tarafıyla eşlecek entity için
+# For the entity to match the MongoDB side
 
 7. touch userDmo.go
 
-# CRUD Operasyonları için
+# For CRUD Operations
 
 8. touch userRepository.go
 
-# Servis metotlarındaki annotation bildirimlerinin Swagger 2.0 destekli olarak dokümante edilmesi için gerekli modülün eklenmesi
+# Adding the necessary module to document annotation declarations in service methods with Swagger 2.0 support
 
 9. go get -u github.com/swaggo/swag/cmd/swag
 
-# Bu arada kod tarafındaki annotation bölümleri tamamlandıktan sonra Swagger dokümanının üretilmesi için aşağıdaki komutu çalıştırmalıyız
+# In the meantime, after the annotation sections on the code side are completed, we must run the following command to generate the Swagger document.
 
 10. swag init \_ "<folderName>/docs"
 
-# önce bir build etmek lazım
+# build
 
 11. go build
 
-# sonrasında çalıştırabiliriz
+# run
 
 12 ./<folderName>
 Sample $ ./crud
 
-# Örnek birkaç alıntı girelim
+# Sample
 
 curl --location --request POST 'http://localhost:5003/api/v1/user/' \
 --header 'Content-Type: application/json' \
@@ -72,7 +74,7 @@ curl --location --request POST 'http://localhost:5003/api/v1/user/' \
 "Email":"deneme2@test.com"
 }'
 
-# Şimdi de listeleme yapalım
+# List All
 
 curl http://localhost:5003/api/v1/user/
 
