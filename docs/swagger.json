@@ -1,0 +1,155 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Service manual",
+        "title": "Golang CRUD with mongoDB Swagger API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Barış Dilek",
+            "url": "https://github.com/barisdilek",
+            "email": "barisdilek@hotmail.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:5432",
+    "basePath": "/api/v1",
+    "paths": {
+        "/userDmo/": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Returns all userDmos",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/main.userDmo"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            },
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update a userDmo",
+                "parameters": [
+                    {
+                        "description": "User infos",
+                        "name": "userDmo",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.userDmo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Adds a new userDmo",
+                "parameters": [
+                    {
+                        "description": "User infos",
+                        "name": "userDmo",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.userDmo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete a userDmo",
+                "parameters": [
+                    {
+                        "description": "User Id",
+                        "name": "userDmo",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.userDmo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.userDmo": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pass": {
+                    "type": "string"
+                },
+                "surName": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

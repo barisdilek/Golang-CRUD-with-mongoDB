@@ -1,0 +1,101 @@
+basePath: /api/v1
+definitions:
+  main.userDmo:
+    properties:
+      email:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      pass:
+        type: string
+      surName:
+        type: string
+    type: object
+host: localhost:5432
+info:
+  contact:
+    email: barisdilek@hotmail.com
+    name: Barış Dilek
+    url: https://github.com/barisdilek
+  description: Service manual
+  termsOfService: http://swagger.io/terms/
+  title: Golang CRUD with mongoDB Swagger API
+  version: "1.0"
+paths:
+  /userDmo/:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: User Id
+        in: body
+        name: userDmo
+        required: true
+        schema:
+          $ref: '#/definitions/main.userDmo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: ""
+        "500":
+          description: ""
+      summary: Delete a userDmo
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/main.userDmo'
+            type: array
+        "500":
+          description: ""
+      summary: Returns all userDmos
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: User infos
+        in: body
+        name: userDmo
+        required: true
+        schema:
+          $ref: '#/definitions/main.userDmo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: ""
+        "500":
+          description: ""
+      summary: Adds a new userDmo
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: User infos
+        in: body
+        name: userDmo
+        required: true
+        schema:
+          $ref: '#/definitions/main.userDmo'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: ""
+        "500":
+          description: ""
+      summary: Update a userDmo
+swagger: "2.0"
