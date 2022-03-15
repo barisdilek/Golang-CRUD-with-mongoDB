@@ -24,7 +24,7 @@ info:
   title: Golang CRUD with mongoDB Swagger API
   version: "1.0"
 paths:
-  /userDmo/:
+  /Users/:
     delete:
       consumes:
       - application/json

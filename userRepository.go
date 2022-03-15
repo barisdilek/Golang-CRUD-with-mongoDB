@@ -21,7 +21,7 @@ func getConn() (*mongo.Client, context.Context) {
 	client,
 		err := mongo.
 		NewClient(options.Client().
-			ApplyURI("mongodb://scoth:tiger@localhost:27017"))
+			ApplyURI("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false"))
 	ctx := context.Background()
 	if err != nil {
 		log.Printf("Error while opening to new client : %v", err)
